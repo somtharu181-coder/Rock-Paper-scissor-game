@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzell game</title>
+</head>
+<body>
+    <h1 style="text-align: center; color: blue; top: 200px;">
+        Welcome to Rock Paper Scissor game
+    </h1>
+    <h2 style="text-align: center ; color: burlywood;">Choose the Option below to continue the Game</h2>
+    <div style="width: 100%; height: 200px; background-color: aliceblue;" >
+        <h3 style=" color: blueviolet; text-align: center;">
+           <pre>
+                        {{message}}
+            Your current score: {{user_score}}
+            opponent current score: {{machine_score}}
+        </pre>
+        </h3>
+    </div>
+   
+    <form method="post" action="{% url 'game' %}"style="align-items: center; text-align: center;">  {% csrf_token %}
+        <button type="submit" name="data" value="Rock" style="background-color: olivedrab; color: aqua;">Rock</button>
+        <button type="submit" name="data" value="Paper" style="background-color: olivedrab; color: aqua;">Paper</button>
+        <button type="submit" name="data" value="Scissor" style="background-color: olivedrab; color: aqua;">Scissor</button>
+        <button type="submit" name="data" value="Quit" style="background-color: olivedrab; color: aqua;">Quit</button>
+    </form>
+</body>
+</html>
